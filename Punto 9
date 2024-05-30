@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+int
+main ()
+{
+  int mujeres, hombres, mesas, cont, total, personaspormesa, sillasmujeres,
+	votom, votoh, conth, contm;
+  cout <<
+	"\nRecuerde que la suma entre hombres y mujeres debe ser igual a 100\n";
+  do
+	{
+	  do
+		{
+		  cout <<
+			"Digite el numero de hombres que van a asistir en la convencion\n";
+		  cin >> hombres;
+		  cout <<
+			"Digite el numero de mujeres que van a asistir en la convencion\n";
+		  cin >> mujeres;
+		  if ((hombres + mujeres < 100) or (hombres + mujeres > 100))
+			{
+			  cout <<
+				"\n!!La cantidad de hombres y mujeres no son los requeridos!!\nDigite de nuevo las cantidades\n\n";
+			  hombres = 101;
+			}
+		}
+	  while (hombres + mujeres != 100);
+	  total = hombres + mujeres;
+	  cout << "Digite la cantida de mesas\n";
+	  cin >> mesas;
+	  personaspormesa = total / mesas;
+	  cout << "La cantida de perosnas por mesa serC! de: " << personaspormesa
+		<< " sillas\n\n";
+	  sillasmujeres = personaspormesa;
+	  cout << "De las cuales " << personaspormesa -
+		2 << " seran para hombres y 2 seran para mujeres\n\n";
+	  cout << "Dando un total del " << (personaspormesa -
+										2) *
+		mesas << " sillas para hombres y " << 2 *
+		mesas << " sillas para mujeres\n\n";
+	  cout <<
+		"Suponiendo que el voto de las mujeres vale 1.5.\nLa cantidad de mujeres que se necesitaria para que un candidato ganara mediante el voto de mujeres seria de : ";
+	  while ((votom * 1.5) <= 50)
+		{
+		  votom++;
+		  if (votom * 1.5 >= 50)
+			cout << votom << " votos\n\n";
+		}
+	  cout <<
+		"Si los votos de los hombres valen 1.5.\nLa cantida de mujeres que deberia votar deberia ser de: ";
+	  while ((votoh * 1.5) <= 49.5)
+		{
+		  votoh++;
+		  if ((votoh * 1.5) > 49.5)
+			cout << 100 - votoh << " votos por mujeres";
+		}
+	  cont++;
+	}
+  while (cont != 1);
+}
